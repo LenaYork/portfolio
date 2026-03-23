@@ -1,0 +1,88 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  background-color: $light-bg;
+  color: $text-dark;
+  line-height: 1.6;
+  overflow-x: hidden;
+  
+  &.dark-mode {
+    background-color: $dark-bg;
+    color: $text-light;
+  }
+}
+
+// Container for consistent max-width
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  
+  @include mobile {
+    padding: 0 1rem;
+  }
+}
+
+// Section spacing
+section {
+  padding: 6rem 0;
+  
+  @include mobile {
+    padding: 4rem 0;
+  }
+}
+
+// Utility classes
+.glass {
+  @include glass;
+}
+
+.glass-dark {
+  @include glass-dark;
+}
+
+.gradient-text {
+  @include gradient-text($primary, $secondary);
+}
+
+// Animation keyframes
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(96, 165, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+  }
+}
