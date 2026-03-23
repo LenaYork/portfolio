@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
+import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import './styles/index.scss';
 
@@ -41,13 +42,7 @@ function App() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" style={{ minHeight: '50vh' }}>
-          <div className="container">
-            <h2>About</h2>
-            <p>Coming soon...</p>
-          </div>
-        </section>
+        <About />
 
         {/* Projects Section */}
         <section id="projects" style={{ minHeight: '50vh' }}>
