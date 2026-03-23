@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Code2, Sun, Moon, User, FolderGit2, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Header.scss';
@@ -11,34 +11,37 @@ interface HeaderProps {
 const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      // Если мы в процессе программного скролла — не обновляем активную секцию
+      if (isScrollingRef.current) return;
+
+      const sections = ['home', 'about', 'projects'];
+      let currentSection = 'home';
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const getCurrentSection = () => {
-      const sections = ['home', 'about', 'projects', 'contact'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    getCurrentSection();
   }, []);
 
   const navItems = [
@@ -48,11 +51,34 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   ];
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      setActiveSection(sectionId);
-      element.scrollIntoView({ behavior: 'smooth' });
+    // Включаем флаг, что мы скроллим программно
+    isScrollingRef.current = true;
+
+    // Сразу обновляем активную секцию
+    setActiveSection(sectionId);
+
+    // Если это contact — скроллим к футеру
+    if (sectionId === 'contact') {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+
+    // Очищаем предыдущий таймаут
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+
+    // Через 800ms выключаем флаг (время анимации скролла)
+    scrollTimeoutRef.current = window.setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 800);
   };
 
   return (

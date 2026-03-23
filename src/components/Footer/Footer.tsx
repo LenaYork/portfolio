@@ -7,9 +7,9 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/lenayork', label: 'GitHub', color: '#333' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/lenayork', label: 'LinkedIn', color: '#0A66C2' },
-    { icon: Send, href: 'https://t.me/lenayork', label: 'Telegram', color: '#26A5E4' },
-    { icon: Mail, href: 'mailto:lena.york@example.com', label: 'Email', color: '#EA4335' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/helenbaryshava/', label: 'LinkedIn', color: '#0A66C2' },
+    { icon: Send, href: 'https://t.me/happiness1000', label: 'Telegram', color: '#26A5E4' },
+    { icon: Mail, href: 'mailto:leenabarysheva@gmail.com', label: 'Email', color: '#EA4335' },
   ];
 
   const scrollToTop = () => {

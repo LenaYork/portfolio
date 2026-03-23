@@ -64,7 +64,7 @@ const About = () => {
             </h2>
             <div className="about__badge">
               <Code2 className="about__badge-icon" />
-              <span>Tech Lead • Frontend Developer</span>
+              <span>Helen | Tech Lead • Frontend Developer • Mentor</span>
             </div>
           </div>
 
