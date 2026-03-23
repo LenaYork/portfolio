@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import './styles/index.scss';
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }

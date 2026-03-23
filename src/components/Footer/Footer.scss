@@ -1,0 +1,159 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $light-bg;
+  border-top: 1px solid rgba($gray, 0.1);
+  margin-top: auto;
+
+  body.dark-mode & {
+    background: rgba($dark, 0.8);
+    border-top-color: rgba($gray, 0.2);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+  }
+
+  // Left column
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    @include gradient-text($primary, $secondary);
+  }
+
+  &__description {
+    color: $gray;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+  }
+
+  &__back-to-top {
+    background: none;
+    border: none;
+    color: $primary;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all $transition-fast;
+
+    &:hover {
+      transform: translateY(-3px);
+      color: $secondary;
+    }
+  }
+
+  // Social links
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 160px;
+
+    @include mobile {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba($gray, 0.05);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: $text-dark;
+    transition: all $transition-fast;
+
+    body.dark-mode & {
+      color: $text-light;
+      background: rgba($gray, 0.1);
+    }
+
+    &:hover {
+      background: rgba($primary, 0.1);
+      transform: translateX(5px);
+
+      .footer__social-icon {
+        color: $primary;
+      }
+    }
+  }
+
+  &__social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: all $transition-fast;
+  }
+
+  &__social-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  // Bottom bar
+  &__bottom {
+    border-top: 1px solid rgba($gray, 0.1);
+    padding: 1.5rem 0;
+
+    body.dark-mode & {
+      border-top-color: rgba($gray, 0.2);
+    }
+  }
+
+  &__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @include mobile {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &__copyright {
+    color: $gray;
+    font-size: 0.8rem;
+  }
+
+  &__credits {
+    color: $gray;
+    font-size: 0.8rem;
+
+    body.dark-mode & {
+      color: rgba($gray, 0.7);
+    }
+  }
+}
