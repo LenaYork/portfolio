@@ -8,7 +8,7 @@ export const projects: Project[] = [
     longDescription: 'Fully responsive website with admin panel for menu updates, gallery, and contact form.',
     techStack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
     demoUrl: 'https://greekcafe.netlify.app/',
-    imageUrl: '/images/projects/cafe-site.png',
+    imageUrl: './images/projects/cafe-site.png',
     status: 'active',
     type: 'web',
   },
