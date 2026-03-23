@@ -79,7 +79,7 @@ const About = () => {
             >
               <div className="about__photo-glow">
                 <img 
-                  src="/images/profile.png" 
+                  src="./images/profile.png" 
                   alt="Helen - Frontend Developer" 
                   className="about__photo"
                 />
