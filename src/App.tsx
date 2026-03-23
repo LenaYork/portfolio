@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import Header from './components/Header/Header';
+import './styles/index.scss';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -22,49 +24,47 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="app">
-      <div
-        className="container"
-        style={{
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column'
-        }}
-      >
-        <button
-          onClick={toggleDarkMode}
-          style={{
-            position: 'fixed',
-            top: '1rem',
-            right: '1rem',
-            padding: '0.5rem 1rem',
-            borderRadius: '2rem',
-            border: 'none',
-            cursor: 'pointer',
-            background: darkMode ? '#334155' : '#e2e8f0',
-            color: darkMode ? '#fff' : '#334155',
-            fontWeight: 'bold',
-            zIndex: 1000,
-          }}
-        >
-          {darkMode ? '☀️ Light' : '🌙 Dark'}
-        </button>
+    <>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-        <h1 className="gradient-text" style={{ fontSize: '3rem', marginBottom: '1rem', textAlign: 'center' }}>
-          Portfolio
-        </h1>
-        <p style={{ fontSize: '1.2rem', color: darkMode ? '#94a3b8' : '#64748b', textAlign: 'center' }}>
-          Frontend Developer | React • TypeScript • React Native
-        </p>
-        <div style={{ marginTop: '2rem' }}>
-          <div className="glass" style={{ padding: '1rem 2rem', borderRadius: '1rem' }}>
-            ✨ SCSS + Container Queries Ready ✨
+      <main>
+        {/* Home Section */}
+        <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="container" style={{ textAlign: 'center' }}>
+            <h1 className="gradient-text" style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+              Frontend Developer
+            </h1>
+            <p style={{ fontSize: '1.2rem', color: 'var(--gray)' }}>
+              React • TypeScript • React Native
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" style={{ minHeight: '50vh' }}>
+          <div className="container">
+            <h2>About</h2>
+            <p>Coming soon...</p>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" style={{ minHeight: '50vh' }}>
+          <div className="container">
+            <h2>Projects</h2>
+            <p>Coming soon...</p>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" style={{ minHeight: '50vh' }}>
+          <div className="container">
+            <h2>Contact</h2>
+            <p>Coming soon...</p>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
