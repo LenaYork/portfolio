@@ -18,7 +18,6 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Если мы в процессе программного скролла — не обновляем активную секцию
       if (isScrollingRef.current) return;
 
       const sections = ['home', 'about', 'projects'];
@@ -51,13 +50,10 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   ];
 
   const scrollToSection = (sectionId: string) => {
-    // Включаем флаг, что мы скроллим программно
     isScrollingRef.current = true;
 
-    // Сразу обновляем активную секцию
     setActiveSection(sectionId);
 
-    // Если это contact — скроллим к футеру
     if (sectionId === 'contact') {
       const footer = document.querySelector('footer');
       if (footer) {
@@ -70,12 +66,10 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
       }
     }
 
-    // Очищаем предыдущий таймаут
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
     }
 
-    // Через 800ms выключаем флаг (время анимации скролла)
     scrollTimeoutRef.current = window.setTimeout(() => {
       isScrollingRef.current = false;
     }, 800);
