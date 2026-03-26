@@ -46,6 +46,10 @@
 
     &-text {
       @include gradient-text($primary, $secondary);
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Send, Mail } from 'lucide-react';
+import { Github, Send, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './Footer.scss';
 
@@ -7,7 +7,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/lenayork', label: 'GitHub', color: '#333' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/helenbaryshava/', label: 'LinkedIn', color: '#0A66C2' },
     { icon: Send, href: 'https://t.me/happiness1000', label: 'Telegram', color: '#26A5E4' },
     { icon: Mail, href: 'mailto:leenabarysheva@gmail.com', label: 'Email', color: '#EA4335' },
   ];

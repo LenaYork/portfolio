@@ -60,11 +60,11 @@ const About = () => {
           {/* Header */}
           <div className="about__header">
             <h2 className="about__title">
-              <span className="gradient-text">About Me</span>
+              <span className="gradient-text">Hi! I'm Helen</span>
             </h2>
             <div className="about__badge">
               <Code2 className="about__badge-icon" />
-              <span>Helen | Tech Lead • Frontend Developer • Mentor</span>
+              <span>Tech Lead • Frontend Developer • Mentor</span>
             </div>
           </div>
 
