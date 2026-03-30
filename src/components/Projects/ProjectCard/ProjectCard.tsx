@@ -13,6 +13,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     switch (project.status) {
       case 'active':
         return <span className="project-card__status project-card__status--active">Live Demo</span>;
+      case 'ready-for-release':
+        return <span className="project-card__status project-card__status--ready">Ready for Release</span>;
       case 'coming-soon':
         return <span className="project-card__status project-card__status--coming">Coming Soon</span>;
       case 'in-development':

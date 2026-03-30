@@ -7,6 +7,6 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   imageUrl?: string;
-  status: 'active' | 'coming-soon' | 'in-development';
+  status: 'active' | 'ready-for-release' | 'coming-soon' | 'in-development';
   type: 'web' | 'mobile' | 'desktop';
 }

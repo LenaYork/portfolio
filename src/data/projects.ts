@@ -4,8 +4,8 @@ export const projects: Project[] = [
   {
     id: 'cafe-site',
     title: 'Café Website',
-    description: 'Modern website for a café with menu management system',
-    longDescription: 'Fully responsive website with admin panel for menu updates, gallery, and contact form.',
+    description: 'Bilingual website (English/Greek) for a café with animated video footer and interactive chatbot',
+    longDescription: 'Fully responsive website with admin panel for menu updates. Features: bilingual support (EN/GR), animated underwater video footer, and a virtual assistant that answers FAQs and suggests menu items.',
     techStack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
     demoUrl: 'https://greekcafe.netlify.app/',
     imageUrl: './images/projects/cafe-site.png',
@@ -15,12 +15,11 @@ export const projects: Project[] = [
   {
     id: 'yakori',
     title: 'Yakori — Mental Wellness App',
-    description: 'Mobile app for psychological self-support and emotional balance',
-    longDescription: 'A React Native app focused on mental well-being. Features guided exercises, mood tracking, and personalized recommendations. No backend — works offline.',
-    techStack: ['React Native', 'TypeScript', 'AsyncStorage', 'React Navigation'],
+    description: 'Offline-first mobile app for psychological self-support. Created by a psychologist.',
+    longDescription: 'A React Native app for emotional balance and self-support. Works completely offline — your data never leaves your phone. All supportive phrases are always with you. Designed with psychological expertise.',
+    techStack: ['React Native', 'Context API', 'AsyncStorage', 'React Navigation'],
     // googlePlayUrl будет добавлен позже
-    status: 'in-development',
-    type: 'mobile',
+    status: 'ready-for-release', type: 'mobile',
   },
   {
     id: 'words-web',
