@@ -19,6 +19,7 @@ export const projects: Project[] = [
     longDescription: 'A React Native app for emotional balance and self-support. Works completely offline — your data never leaves your phone. All supportive phrases are always with you. Designed with psychological expertise.',
     techStack: ['React Native', 'Context API', 'AsyncStorage', 'React Navigation'],
     // googlePlayUrl будет добавлен позже
+    imageUrl: './images/projects/yakori-app.png',
     status: 'ready-for-release', type: 'mobile',
   },
   {

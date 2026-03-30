@@ -33,9 +33,49 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     }
   };
 
+  const getStatusMessage = () => {
+    switch (project.status) {
+      case 'active':
+        return (
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card__link project-card__link--demo"
+          >
+            <ExternalLink className="project-card__link-icon" />
+            Live Demo
+          </a>
+        );
+      case 'ready-for-release':
+        return (
+          <span className="project-card__coming-soon project-card__coming-soon--ready">
+            <Smartphone className="project-card__coming-icon" />
+            Ready for Release
+          </span>
+        );
+      case 'coming-soon':
+        return (
+          <span className="project-card__coming-soon project-card__coming-soon--coming">
+            <Clock className="project-card__coming-icon" />
+            Coming Soon
+          </span>
+        );
+      case 'in-development':
+        return (
+          <span className="project-card__coming-soon project-card__coming-soon--dev">
+            <Clock className="project-card__coming-icon" />
+            In Development
+          </span>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <motion.div
-      className="project-card"
+      className={`project-card ${project.status === 'ready-for-release' ? 'project-card--ready' : ''}`}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -73,17 +113,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
           {/* Links */}
           <div className="project-card__links">
-            {project.demoUrl && project.status === 'active' && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-card__link project-card__link--demo"
-              >
-                <ExternalLink className="project-card__link-icon" />
-                Live Demo
-              </a>
-            )}
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -95,12 +124,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 Code
               </a>
             )}
-            {project.status !== 'active' && (
-              <span className="project-card__coming-soon">
-                <Clock className="project-card__coming-icon" />
-                {project.status === 'coming-soon' ? 'Coming soon' : 'In development'}
-              </span>
-            )}
+            {getStatusMessage()}
           </div>
         </div>
       </div>
