@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Users, Globe, Heart, TrendingUp, Mic, GraduationCap } from 'lucide-react';
+import { Code2, Users, Globe, Heart, TrendingUp, Mic, GraduationCap, Settings, Cpu } from 'lucide-react';
 import './About.scss';
 
 const About = () => {
@@ -15,35 +15,45 @@ const About = () => {
   ];
 
   const highlights = [
-    { 
-      icon: TrendingUp, 
-      text: 'Performance Optimization', 
-      description: 'Reduced initial load time by 40% through code splitting and lazy loading' 
+    {
+      icon: TrendingUp,
+      text: 'Performance Optimization',
+      description: 'Optimized chat performance: infinite scroll with lazy loading (10 messages initially), reducing initial load time by ~40%'
     },
-    { 
-      icon: Users, 
-      text: 'Tech Lead & Mentor', 
-      description: 'Leading a frontend team of 5. Mentored 10+ juniors and interns' 
+    {
+      icon: Users,
+      text: 'Tech Lead & Mentoring',
+      description: 'Leading a team of 5. Mentored 10+ developers with tailored guidance. Reduced onboarding time and improved team autonomy'
     },
-    { 
-      icon: Mic, 
-      text: 'Technical Interviewer', 
-      description: 'Conducting interviews for frontend, backend, full-stack, and QA candidates. Also assessing English proficiency for IT roles' 
+    {
+      icon: Settings,
+      text: 'Processes & Automation',
+      description: 'Introduced PR templates, pre-commit hooks (Husky), and automation scripts. Improved code quality and team workflow'
     },
-    { 
-      icon: Globe, 
-      text: 'English C2', 
-      description: 'Fluent professional communication. Teaching IT English to developers' 
+    {
+      icon: Mic,
+      text: 'Technical Interviewer',
+      description: 'Conducted 30+ technical interviews for frontend, backend, full-stack, and QA roles. Also assessing English for IT'
     },
-    { 
-      icon: Heart, 
-      text: 'Psychology Background', 
-      description: 'Building effective team communication. Maintaining healthy work-life balance' 
+    {
+      icon: Globe,
+      text: 'English C1',
+      description: 'Fluent professional communication. Teaching IT English to developers'
     },
-    { 
-      icon: GraduationCap, 
-      text: 'Formal CS Education', 
-      description: 'State-recognized diploma in Software Engineering (in addition to psychology & teaching degrees)' 
+    {
+      icon: Heart,
+      text: 'Psychology Background',
+      description: 'Building effective team communication. Maintaining healthy work-life balance'
+    },
+    {
+      icon: GraduationCap,
+      text: 'Software Engineering Degree',
+      description: 'State-recognized diploma in Software Engineering (+ psychology & teaching degrees)'
+    },
+    {
+      icon: Cpu,
+      text: 'AI Literacy',
+      description: 'Using LLMs (ChatGPT, Claude) for boilerplate and refactoring, while keeping human oversight for architecture and team decisions'
     },
   ];
 
@@ -71,16 +81,16 @@ const About = () => {
           {/* Photo + Bio Row */}
           <div className="about__row">
             {/* Photo */}
-            <motion.div 
+            <motion.div
               className="about__photo-wrapper"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               <div className="about__photo-glow">
-                <img 
-                  src="./images/profile.png" 
-                  alt="Helen - Frontend Developer" 
+                <img
+                  src="./images/profile.png"
+                  alt="Helen - Frontend Developer"
                   className="about__photo"
                 />
               </div>
@@ -89,17 +99,17 @@ const About = () => {
             {/* Bio */}
             <div className="about__bio">
               <p className="about__text">
-                <strong>Tech Lead & Frontend Developer</strong> with <strong>7 years in programming</strong>, 
-                including <strong>4 years with React</strong>. Started as a web developer in 2019, 
+                <strong>Tech Lead & Frontend Developer</strong> with <strong>7 years in programming</strong>,
+                including <strong>4 years with React</strong>. Started as a web developer in 2019,
                 now leading a frontend team and mentoring developers.
               </p>
               <p className="about__text">
-                I conduct technical interviews for frontend, backend, full-stack, and QA candidates, 
+                I conduct technical interviews for frontend, backend, full-stack, and QA candidates,
                 as well as English proficiency assessments for IT roles.
               </p>
               <p className="about__text about__text--highlight">
-                <strong>By education:</strong> psychologist, teacher, and software engineer (state-recognized diploma). 
-                This unique combination helps me build effective team communication, 
+                <strong>By education:</strong> psychologist, teacher, and software engineer (state-recognized diploma).
+                This unique combination helps me build effective team communication,
                 mentor developers, and maintain a healthy work-life balance.
               </p>
             </div>
