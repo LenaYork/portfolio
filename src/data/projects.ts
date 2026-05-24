@@ -14,9 +14,9 @@ export const projects: Project[] = [
   },
   {
     id: 'yakori',
-    title: 'Yakori — Mental Wellness App',
+    title: 'Yakori - Mental Wellness App',
     description: 'Offline-first mobile app for psychological self-support. Created by a psychologist.',
-    longDescription: 'A React Native app for emotional balance and self-support. Works completely offline — your data never leaves your phone. All supportive phrases are always with you. Designed with psychological expertise.',
+    longDescription: 'A React Native app for emotional balance and self-support. Works completely offline - your data never leaves your phone. All supportive phrases are always with you. Designed with psychological expertise.',
     techStack: ['React Native', 'Context API', 'AsyncStorage', 'React Navigation'],
     // googlePlayUrl будет добавлен позже
     imageUrl: './images/projects/yakori-app.png',
@@ -42,7 +42,7 @@ export const projects: Project[] = [
   {
     id: 'world-time',
     title: 'World Time Tracker',
-    description: 'Track time zones across different countries — perfect for remote teams',
+    description: 'Track time zones across different countries - perfect for remote teams',
     longDescription: 'Web application + NPM widget that can be embedded in any project. Shows current time in multiple time zones with customizable display.',
     techStack: ['React', 'TypeScript', 'API', 'NPM Package'],
     status: 'in-development',

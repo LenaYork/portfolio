@@ -17,43 +17,43 @@ const About = () => {
   const highlights = [
     {
       icon: TrendingUp,
-      text: 'Performance Optimization',
-      description: 'Optimized chat performance: infinite scroll with lazy loading (10 messages initially), reducing initial load time by ~40%'
+      text: 'Engineering Excellence',
+      description: 'Lead frontend architecture and code quality: established code review standards, introduced CI/CD best practices, and significantly reduced technical debt.'
     },
     {
       icon: Users,
-      text: 'Tech Lead & Mentoring',
-      description: 'Leading a team of 5. Mentored 10+ developers with tailored guidance. Reduced onboarding time and improved team autonomy'
+      text: 'Tech Lead & Team Growth',
+      description: 'Lead a team of 10 engineers. Actively involved in technical hiring: design interview tasks, conduct interviews, and participate in hiring decisions.'
     },
     {
       icon: Settings,
       text: 'Processes & Automation',
-      description: 'Introduced PR templates, pre-commit hooks (Husky), and automation scripts. Improved code quality and team workflow'
+      description: 'Introduced PR templates, pre-commit hooks (Husky), and automation scripts. Improved code quality and team workflow.'
     },
     {
       icon: Mic,
       text: 'Technical Interviewer',
-      description: 'Conducted 30+ technical interviews for frontend, backend, full-stack, and QA roles. Also assessing English for IT'
+      description: 'Conduct technical interviews for frontend, backend, full-stack, and QA roles. Also assess English proficiency for IT candidates.'
     },
     {
       icon: Globe,
-      text: 'English C1',
-      description: 'Fluent professional communication. Teaching IT English to developers'
+      text: 'English C1-C2',
+      description: 'Fluent professional communication. Teaching IT English to developers.'
     },
     {
       icon: Heart,
-      text: 'Psychology Background',
-      description: 'Building effective team communication. Maintaining healthy work-life balance'
+      text: 'Mentoring & Facilitation',
+      description: 'Lead onboarding for new developers, maintain technical documentation, and promote best practices. Support junior team members and help resolve technical disagreements constructively.'
     },
     {
       icon: GraduationCap,
-      text: 'Software Engineering Degree',
-      description: 'State-recognized diploma in Software Engineering (+ psychology & teaching degrees)'
+      text: 'Education Background',
+      description: 'State-recognized diploma in Software Engineering + psychology & teaching degrees.'
     },
     {
       icon: Cpu,
       text: 'AI Literacy',
-      description: 'Using LLMs (ChatGPT, Claude) for boilerplate and refactoring, while keeping human oversight for architecture and team decisions'
+      description: 'Using LLMs (ChatGPT, Claude) for boilerplate and refactoring, while keeping human oversight for architecture and team decisions.'
     },
   ];
 
