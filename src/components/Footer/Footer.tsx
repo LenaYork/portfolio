@@ -5,7 +5,7 @@ import './Footer.scss';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const handleEmailClick = async (e) => {
+  const handleEmailClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const email = 'leenabarysheva@gmail.com';
 
